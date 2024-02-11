@@ -12,6 +12,7 @@ from models.place import Place
 from models.amenity import Amenity
 from models.review import Review
 
+
 def parse(arg):
     curly_braces = re.search(r"\{(.*?)\}", arg)
     brackets = re.search(r"\[(.*?)\]", arg)
@@ -31,7 +32,8 @@ def parse(arg):
 
 
 class HBNBCommand(cmd.Cmd):
-    """Represents the HBNBCommand class that defines the command interpreter."""
+    """Represents the HBNBCommand class that
+    defines the command interpreter."""
 
     prompt = "(hbnb) "
 
@@ -84,7 +86,7 @@ class HBNBCommand(cmd.Cmd):
         """Usage: create <class>
         Creates a new instance.
         """
-        
+
         args = parse(line)
         if len(args) == 0:
             print("** class name missing **")
@@ -98,7 +100,7 @@ class HBNBCommand(cmd.Cmd):
         """Usage: show <class> <id> or <class>.show(<id>)
         Displays the string representation of a class instance of a given id.
         """
-        
+
         args = parse(line)
         objdict = storage.all()
         if len(args) == 0:
@@ -115,7 +117,7 @@ class HBNBCommand(cmd.Cmd):
     def do_destroy(self, line):
         """Usage: destroy <class> <id> or <class>.destroy(<id>)
         Deletes a class instance of a given id."""
-        
+
         args = parse(line)
         objdict = storage.all()
         if len(args) == 0:
@@ -135,7 +137,7 @@ class HBNBCommand(cmd.Cmd):
         Displays string representations of all instances of a given class.
         If no class is specified, displays all instantiated objects.
         """
-        
+
         args = parse(line)
         if len(args) > 0 and args[0] not in HBNBCommand.__classes:
             print("** class doesn't exist **")
@@ -155,7 +157,7 @@ class HBNBCommand(cmd.Cmd):
         Updates a class instance of a given id by adding or updating
         a given attribute key/value pair or dictionary.
         """
-        
+
         args = parse(line)
         objdict = storage.all()
 
