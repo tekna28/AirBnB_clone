@@ -21,12 +21,15 @@ class BaseModel:
                         value, "%Y-%m-%dT%H:%M:%S.%f")
                 else:
                     self.__dict__[key] = value
+        else:
+            models.storage.new(self)
 
     def __str__(self):
         return f"[{self.__class__.__name__}] ({self.id}) {self.__dict__}"
 
     def save(self):
         self.updated_at = datetime.now()
+        models.storage.save()
 
     def to_dict(self):
         cls_dict = {'__class__': self.__class__.__name__}
