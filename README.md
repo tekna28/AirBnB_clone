@@ -35,7 +35,7 @@ cd AirBnB_clone
 
 ## Usage
 
-Once the console is launched, you can start using various commands to manage your AirBnB objects. You can type help or help <command> to get more information about specific commands.
+Once the console is launched, you can start using various commands to manage your AirBnB objects. You can type help or help "command" to get more information about specific commands.
 
 ## Console Commands
 
